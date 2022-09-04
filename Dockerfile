@@ -9,5 +9,6 @@ RUN make
 RUN mkdir /mp4Corpus
 RUN cp ./Test/Data/*.mp4 /mp4Corpus/
 
+# can add harnesses for other binaries
 ENTRYPOINT ["afl-fuzz", "-i", "/mp4Corpus", "-o", "/Bento4Out"]
 CMD  ["/Bento4/mp4info", "@@"]
